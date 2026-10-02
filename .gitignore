@@ -1,0 +1,20 @@
+# Power BI temp and cache
+*.pbix.tmp
+.pbi/
+**/.pbi/
+localSettings.json
+cache.abf
+
+# Excel temp files
+~$*
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# OneDrive and editor
+.vscode/
+.idea/
+*.log
