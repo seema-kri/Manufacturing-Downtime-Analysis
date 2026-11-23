@@ -22,7 +22,7 @@ Estimating 392 minutes of recoverable downtime on a soft drink bottling line usi
 
 The line runs at **64% efficiency** and loses **1,388 minutes** to downtime. **56%** of that downtime is operator-controllable. Cross-training operators in both directions could lift efficiency to about **71%**, saving an estimated **392 minutes**.
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/Dashboard.png)
 
 | KPI | Value |
 |---|---|
@@ -65,12 +65,16 @@ This is sample data from a public analytics case study. It contains no real comp
 
 ```
 Manufacturing-Downtime-Analysis/
-├── README.md
+├── Excel_Analysis/     Excel workbook (efficiency, Pareto, heatmap)
 ├── dashboard/          Power BI file (.pbix)
 ├── data/               Raw data
-├── Excel_Analysis/     Excel workbook
 ├── documentation/      Project presentation and notes
-└── screenshots/        Dashboard, data model, Excel images
+├── screenshots/
+│   ├── Dashboard.png
+│   ├── data_model.png
+│   └── excel_analysis.png
+├── .gitignore
+└── README.md
 ```
 
 ## Data Cleaning & Preparation
@@ -105,15 +109,15 @@ Mac loses 130 of the 160 batch-change minutes but handles machine adjustment bes
 
 ## Dashboard
 
-Power BI dashboard with slicers for Operator, Date and Product.
+Power BI dashboard with slicers for Date, Product and Operator. A summary line at the bottom states the main finding.
 
-- **KPI cards:** line efficiency, total downtime, total batches, average downtime per batch, operator-controllable %
+- **KPI cards:** line efficiency, total downtime (min), total batches, average downtime per batch (min), operator-controllable %
 - **Pareto chart:** downtime minutes by factor with cumulative % line
 - **Operator comparison:** efficiency by operator
 - **Heatmap:** operator by factor downtime, to spot hotspots
 - **Trend:** downtime per batch by day
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/Dashboard.png)
 
 ## Key DAX Measures
 
@@ -156,8 +160,9 @@ I recomputed every dashboard figure independently from the raw data (efficiency,
    ```
 2. Install [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free, Windows).
 3. Open `dashboard/Dashboard.pbix`.
-4. Use the slicers for Operator, Date and Product.
+4. Use the slicers for Date, Product and Operator.
 5. Open the workbook in `Excel_Analysis/` to see the efficiency, Pareto and heatmap work.
+6. See `documentation/` for the project presentation and notes.
 
 ## Final Recommendations / Future Work
 
